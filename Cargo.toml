@@ -1,0 +1,23 @@
+[package]
+name = "wasm-pkg"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { version = "4", features = ["derive", "env"] }
+oci-distribution = { workspace = true }
+oci-wasm = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[workspace]
+members = ["crates/wasm-pkg-deps"]
+
+[workspace.dependencies]
+anyhow = "1"
+dirs = "5"
+oci-distribution = "0.11"
+oci-wasm = "0.0.4"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+tokio = { version = "1", default-features = false }
